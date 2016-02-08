@@ -22,23 +22,34 @@ export function voteForAnswerPromise(id) {
   return fetchFromApi(`vote-for-answer?language=${getLang()}&answerIdentifier=${id}`, { method: 'put', credentials: 'include' });
 }
 export function fetchQuestionsPromise() {
-  return fetchFromApi(getLang() + '/questions.json');
+  //return fetchFromApi(getLang() + '/questions.json');
+  return fetchFromApi('questions_list/' + getLang() + '.json');
+  //questions_list/ru.json
 }
 export function fetchAnswersPromise(path) {
-  return fetchFromApi(getLang() + '/questions/' + path + '.json');
+  //return fetchFromApi(getLang() + '/questions/' + path + '.json');
+  return fetchFromApi('question/' + getLang() + '/' + path + '.json');
+  //question/ru/48.json
 }
 export function fetchWorldviewsPromise() {
-  return fetchFromApi(getLang() + '/worldviews.json');
+  //return fetchFromApi(getLang() + '/worldviews.json');
+  return fetchFromApi('worldviews_list/'+getLang() + '.json');
 }
 export function fetchWorldviewPromise(path) {
-  return fetchFromApi(getLang() + '/worldviews/' + path + '.json');
+  //return fetchFromApi(getLang() + '/worldviews/' + path + '.json');
+  return fetchFromApi('worldview/' +getLang() + '/' + path + '.json');
+  //worldview/ru/46.json
 }
 export function fetchBlogsPromise() {
-  return fetchFromApi(getLang() + '/blogs.json');
+  //return fetchFromApi(getLang() + '/blogs.json');
+  return fetchFromApi('blogs_list/' + getLang() + '.json');
+  //blogs_list/en.json
 }
 export function fetchBlogPromise(path) {
   return fetchFromApi(getLang() + '/blogs/' + path + '.json');
 }
 export function fetchAboutPromise() {
-  return fetchFromApi(getLang() + '/about.json');
+  //return fetchFromApi(getLang() + '/about.json');
+  return fetchFromApi('about/' +getLang() +'.json');
+  //about/ru.json
 }
