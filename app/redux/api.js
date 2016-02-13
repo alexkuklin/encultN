@@ -20,7 +20,8 @@ function fetchFromApi(url, fetchOptions = null) {
 
 export function voteForAnswerPromise(id) {
 	console.log('voteForAnswerPromise');
-  return fetchFromApi(`vote-for-answer?language=${getLang()}&answerIdentifier=${id}`, { method: 'put', credentials: 'include' });
+  //return fetchFromApi(`vote-for-answer?language=${getLang()}&answerIdentifier=${id}`, { method: 'put', credentials: 'include' });
+  return fetchFromApi('vote-for-answer/'+getLang()+'/'+id, { method: 'put', credentials: 'include' });
 }
 export function fetchQuestionsPromise() {
   //return fetchFromApi(getLang() + '/questions.json');
